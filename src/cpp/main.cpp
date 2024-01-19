@@ -128,7 +128,15 @@ int main() {
     cout << (problem8.partition(nums8) ? "true" : "false") << endl;
 
     cout<<"Problem 9"<<endl;
-    Problem8 problem9;
-    vector<int> nums9;
+    Problem9 problem9;
+    vector<vector<Literal>> cnfFormula = {
+            {{'A', false}, {'B', true}},
+            {{'A', true}, {'B', false}, {'C', true}}
+    };
+    unordered_map<char, bool> truthAssignment = {
+            {'A', true}, {'B', false}, {'C', true}
+    };
+    bool result9 = problem9.CNFSatisfied(cnfFormula, truthAssignment);
+    cout << (result9 ? "true" : "false") << endl;
     return 0;
 }
